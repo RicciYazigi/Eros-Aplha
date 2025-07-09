@@ -1,0 +1,4 @@
+global:
+  default_cultural_context: "global"
+  default_jurisdiction: "US"
+  default_platform_policies: ["OnlyFans","SubscribeStar"]

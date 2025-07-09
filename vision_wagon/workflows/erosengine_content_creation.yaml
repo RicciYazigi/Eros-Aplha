@@ -1,0 +1,19 @@
+workflow:
+  name: ErosEngine Content Creation Workflow
+  tasks:
+    - name: generate_narrative
+      agent: ErosWriterAgent
+      action: generate_narrative
+      inputs:
+        prompt: "Generate an erotic narrative."
+        cultural_context: "global"
+      outputs: [narrative]
+
+    - name: assemble_multimedia_package
+      agent: AssemblyAgent
+      action: assemble_multimedia_package
+      inputs:
+        narrative: "{{tasks.generate_narrative.outputs.narrative}}"
+        image_urls: ["img1","img2"]
+        audio_url: "audio"
+      outputs: [multimedia_package]
